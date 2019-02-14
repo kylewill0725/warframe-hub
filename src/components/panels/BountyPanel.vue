@@ -21,8 +21,6 @@
 </template>
 
 <script>
-  import {packeryEvents} from 'vue-packery-plugin';
-
   import TimeBadge from '@/components/TimeBadge.vue';
   import NoDataItem from '@/components/NoDataItem.vue';
   import HubImg from '@/components/HubImg.vue';
@@ -33,15 +31,7 @@
 
   export default {
     name: 'BountyPanel',
-    props: {
-      syndicate: {
-        type: Object,
-        default: function() {
-          return { active: false };
-        }
-      },
-      type: String
-    },
+    props: ['syndicate'],
     computed: {
       headertext() {
         return `${this.type} Bounty Cycle`;
@@ -77,7 +67,6 @@
           },
         ],
         standing: standing,
-        packeryEvents: packeryEvents,
       };
     },
     components: {
